@@ -78,7 +78,7 @@ KeyboardInputManager.prototype.listen = function () {
 
   // Probably all kinds of wrong
   document.querySelector('.starting-power').addEventListener('change', function(event) {
-    KeyboardInputManager.emit('changePower', this.value);
+    self.emit('changePower', this.value);
   });
 
   // Respond to swipe events
