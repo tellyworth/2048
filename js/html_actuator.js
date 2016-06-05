@@ -126,7 +126,7 @@ HTMLActuator.prototype.updateScore = function (score) {
 };
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  this.bestContainer.textContent = bestScore;
+  this.bestContainer.textContent = Number(bestScore).toLocaleString();
 };
 
 HTMLActuator.prototype.message = function (won) {
