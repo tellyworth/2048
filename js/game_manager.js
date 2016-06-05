@@ -30,7 +30,10 @@ GameManager.prototype.keepPlaying = function () {
 
 // Change the power
 GameManager.prototype.changePower = function ( power ) {
-  this.startPower = power;
+  var p = ~~Number( power );
+  if ( String(p) === power && p >= 0 ) {
+    this.startPower = power;
+  }
   //this.actuator.continueGame(); // Clear the game won/lost message
 };
 
@@ -76,7 +79,7 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? Math.pow(2, this.startPower) : 4;
+    var value = Math.random() < 0.9 ? Math.pow(2, this.startPower) : Math.pow(2, this.startPower + 1);
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
