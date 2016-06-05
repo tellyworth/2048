@@ -76,6 +76,11 @@ KeyboardInputManager.prototype.listen = function () {
   this.bindButtonPress(".restart-button", this.restart);
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
 
+  // Probably all kinds of wrong
+  document.querySelector('.starting-power').addEventListener('change', function(event) {
+    KeyboardInputManager.emit('changePower', this.value);
+  });
+
   // Respond to swipe events
   var touchStartClientX, touchStartClientY;
   var gameContainer = document.getElementsByClassName("game-container")[0];
