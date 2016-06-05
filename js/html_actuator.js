@@ -67,7 +67,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  inner.textContent = Number(tile.value).toLocaleString();
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -114,7 +114,7 @@ HTMLActuator.prototype.updateScore = function (score) {
   var difference = score - this.score;
   this.score = score;
 
-  this.scoreContainer.textContent = this.score;
+  this.scoreContainer.textContent = Number(this.score).toLocaleString();
 
   if (difference > 0) {
     var addition = document.createElement("div");
