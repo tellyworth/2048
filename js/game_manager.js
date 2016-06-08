@@ -31,7 +31,7 @@ GameManager.prototype.keepPlaying = function () {
 // Change the power
 GameManager.prototype.changePower = function ( power ) {
   var p = ~~Number( power );
-  if ( String(p) === power && p >= 0 ) {
+  if ( String(p) === power ) {
     this.startPower = power;
   }
   //this.actuator.continueGame(); // Clear the game won/lost message
