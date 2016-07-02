@@ -6,7 +6,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
   this.startTiles     = 2;
   this.startPower     = 1;
-  this.gameType       = 0;
+  this.gameType       = 1;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
